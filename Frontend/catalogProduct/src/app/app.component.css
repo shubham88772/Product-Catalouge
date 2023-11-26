@@ -1,0 +1,21 @@
+.heading{
+    flex: 1 1 auto;
+    text-align: center;
+    font-family: "";
+    font-size: 40px;
+}
+
+.buttons{
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+
+body{
+    background-position: center;
+    background-size: cover;
+  }
+  .mat-toolbar.mat-primary {
+    background: gray;
+    color: #fff;
+  }

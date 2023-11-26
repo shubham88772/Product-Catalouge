@@ -1,0 +1,79 @@
+<section class="background-radial-gradient overflow-hidden">
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          Welcome <br />
+          <span style="color: hsl(218, 81%, 75%)">To Catalog Product</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          Developed By:-Shubham Kumar
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form #userForm = "ngForm" (ngSubmit)="userForm.form.valid && onSubmit()" >
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                  <label id="l1" class="form-label" for="firstName">First Name</label>
+                  <input type="text" id="firstName" placeholder="Enter First Name" class="form-control form-control-lg" name="first_name" [(ngModel)] = "newUser.firstName">
+                    
+                </div>
+              </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                      <label id="l2" class="form-label" for="lastName">Last Name</label>
+                      <input type="text" id="lastName" placeholder="Enter Last Name" class="form-control form-control-lg" name="last_name" [(ngModel)] = "newUser.lastName">
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div class="form-outline datepicker w-100">
+                      <label id="l3" for="E-mail"  class="form-label">Password</label>
+                      <input type="password" placeholder="Enter Password" class="form-control form-control-lg" id="password" name="password" [(ngModel)] = "newUser.password">
+                  </div>
+
+                </div>
+        
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                  <label id="l4" class="form-label" for="password">Confirm Password</label>
+                    <input type="password" id="confirm_password" placeholder="Confirm Password" class="form-control form-control-lg" name = "confirmpassword" [(ngModel)] = "confirmpassword">
+                  </div>
+                </div>
+                <span class="text-danger" *ngIf ="alert">Password and Confirm password does not match</span>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-12">
+                  <label id="l5" class="form-label select-label">E-mail</label>
+                  <input type="email" id="confirmPass" placeholder="Enter Email" class="form-control form-control-lg" name="email" [(ngModel)] = "newUser.email">
+                </div>
+              </div>
+              <a href="/login">Have an account already?</a>
+
+              <div class="mt-4 pt-2">
+                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+              </div>
+              <div *ngIf = "registered" class="alert alert-success" role="alert">
+                <strong>you've been registered</strong> <a href="/login"> Click on this link to move to login page </a>
+            </div> 
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

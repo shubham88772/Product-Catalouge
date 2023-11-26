@@ -1,0 +1,73 @@
+<nav>
+    <a class="links" (click) = "onHome()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+          </svg>
+        HOME
+    </a>
+    <a style="float:right;" class="links" href="#">LOG OUT</a>
+    </nav>
+        <div class="banner-bootom-w3-agileits py-5">
+            <div class="container py-xl-4 py-lg-2">
+                <!-- tittle heading -->
+                <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+                    <span>P</span>roduct
+                    <span>D</span>etails</h3><br>
+                <!-- //tittle heading -->
+                <div class="row">
+                    <div class="col-lg-5 col-md-8 single-right-left ">
+                        <div class="grid images_3_of_2">
+                            <div class="flexslider">
+                            <div class="thumb-image">
+                                <img src="{{productDetail.product_image}}" 
+                                 class="img img-responsive img-fluid" alt=""> 
+                                
+                            </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div *ngFor = "let products of productDetail"> -->
+                    <div class="col-lg-7 single-right-left simpleCart_shelfItem">
+                        <!-- <h3 class="mb-4">Name :</h3> -->
+                        <h3>{{productDetail.product_name}}</h3>
+                        <p class="mb-3">
+                            <strong>Price :</strong> <span class="item_price">₹{{productDetail.price}}</span>
+                        </p>
+                        <div class="product-single-w3l">
+                            <p class="my-sm-4 my-3">
+                                <strong>Description :</strong>
+                                {{productDetail.description}}
+                            </p>
+                            <p class="my-sm-4 my-3">
+                                <strong>Product Code : </strong>
+                                {{productDetail.product_code}}
+                            </p>
+                            <p class="my-sm-4 my-3">
+                                <strong>Brand :</strong>{{productDetail.brand}}
+                            </p>
+                        <form #userForm = "ngForm" (ngSubmit)="onBuy()">
+                        <p><strong>Enter pincode :</strong></p>
+                        <input type="number" placeholder="pin code, eg: 1100.." name="pinCode" [(ngModel)] = "_pincode">
+                        <br>
+                        <span class="text-danger" *ngIf ="alert == true">We don't provide service at this pincode</span>
+                        <br>
+                        <br>
+                        <button type = "submit" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                        </button>
+                        </form>
+                        <br>
+                        <div *ngIf = "location == true" class="alert alert-success" role="alert">
+                            <strong>Would be delievered in 3-4 working days!</strong>
+                        </div> 
+                    </div>
+                    <br>
+                        <!-- <a href="${pageContext.request.contextPath}/product/show">Go Back</a> -->
+                        <!-- &emsp;<a href="${pageContext.request.contextPath}/">Go Home</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
